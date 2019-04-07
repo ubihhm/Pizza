@@ -1,0 +1,50 @@
+﻿@model Pizza.Models.View.BestillingViewModel
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Bestilling af pizza</h1>
+
+<h4>Vælg hvor mange De vil have af hver pizza </h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <strong>@Model.Meddelelse</strong>
+
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Brugernavn" class="control-label"></label>
+                <input asp-for="Brugernavn" class="form-control" />
+                <span asp-validation-for="Brugernavn" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AntalMargherita" class="control-label"></label>
+                <input asp-for="AntalMargherita" class="form-control" />
+                <span asp-validation-for="AntalMargherita" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AntalCapricciosa" class="control-label"></label>
+                <input asp-for="AntalCapricciosa" class="form-control" />
+                <span asp-validation-for="AntalCapricciosa" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AntalQuattroStagioni" class="control-label"></label>
+                <input asp-for="AntalQuattroStagioni" class="form-control" />
+                <span asp-validation-for="AntalQuattroStagioni" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
